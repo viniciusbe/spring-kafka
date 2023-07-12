@@ -26,6 +26,14 @@ services:
     depends_on:
       - zookeeper
 
+  mysqldb:
+    image: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=wikimedia
+
 volumes:
   zookeeper_data:
     driver: local
